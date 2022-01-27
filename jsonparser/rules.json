@@ -1,0 +1,44 @@
+[
+    {
+        "Designation": "Student",
+        "Department": "ECE",
+        "Operation": "read",
+        "Filetype": "Journal Paper",
+        "Sensitivity": 2
+    },
+    {
+        "Designation": "Student",
+        "Department": "ECE",
+        "Operation": "read",
+        "Filetype": "Conference Paper",
+        "Sensitivity": 2
+    },
+    {
+        "Designation": "Student",
+        "Department": "ECE",
+        "Operation": "read",
+        "Filetype": "E-Book",
+        "Sensitivity": 2
+    },
+    {
+        "Designation": "Teacher",
+        "Department": "CSE",
+        "Operation": "read",
+        "Filetype": "Journal Paper",
+        "Sensitivity": 3
+    },
+    {
+        "Designation": "Teacher",
+        "Department": "CSE",
+        "Operation": "read",
+        "Filetype": "Conference Paper",
+        "Sensitivity": 3
+    },
+    {
+        "Designation": "Teacher",
+        "Department": "CSE",
+        "Operation": "read",
+        "Filetype": "E-Book",
+        "Sensitivity": 3
+    }
+]

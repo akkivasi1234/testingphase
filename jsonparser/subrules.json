@@ -1,0 +1,60 @@
+{
+    "Institute": [
+        {
+            "Designation": "Student",
+            "Department": "ECE"
+        },
+        {
+            "Designation": "Student",
+            "Department": "ECE"
+        },
+        {
+            "Designation": "Student",
+            "Department": "ECE"
+        },
+        {
+            "Designation": "Teacher",
+            "Department": "CSE"
+        },
+        {
+            "Designation": "Teacher",
+            "Department": "CSE"
+        },
+        {
+            "Designation": "Teacher",
+            "Department": "CSE"
+        }
+    ],
+    "Library": [
+        {
+            "Operation": "read",
+            "Filetype": "Journal Paper",
+            "Sensitivity": 2
+        },
+        {
+            "Operation": "read",
+            "Filetype": "Conference Paper",
+            "Sensitivity": 2
+        },
+        {
+            "Operation": "read",
+            "Filetype": "E-Book",
+            "Sensitivity": 2
+        },
+        {
+            "Operation": "read",
+            "Filetype": "Journal Paper",
+            "Sensitivity": 3
+        },
+        {
+            "Operation": "read",
+            "Filetype": "Conference Paper",
+            "Sensitivity": 3
+        },
+        {
+            "Operation": "read",
+            "Filetype": "E-Book",
+            "Sensitivity": 3
+        }
+    ]
+}

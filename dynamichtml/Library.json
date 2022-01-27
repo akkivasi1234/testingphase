@@ -1,0 +1,26 @@
+{
+    "organizationName": "Library",
+    "organizationIdentifier": "Filename",
+    "attributesToBeVerifiedByOrganization": [
+        "Filetype",
+        "Sensitivity"
+    ],
+    "namesofOrganizations": [
+        "Institute",
+        "Library"
+    ],
+    "organizationsIdentifiers": {
+        "Institute": "RollNo",
+        "Library": "Filename"
+    },
+    "attributesToBeVerifiedByOrganizations": {
+        "Institute": [
+            "Designation",
+            "Department"
+        ],
+        "Library": [
+            "Filetype",
+            "Sensitivity"
+        ]
+    }
+}

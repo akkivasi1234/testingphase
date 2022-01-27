@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <form id="Objectform" method="post" action="/object">
+
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form id="Ruleform" method="post" action="/rule">
+
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form id="Accessform" method="post" action="/access">
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.addEventListener("load", fetchandload);
+        function fetchandload() {
+            fetch("Library.json").then(res => res.json()).then(data => addFields(data))
+        }
+        function addFields(data) {
+            //Objectform
+            var container = document.getElementById("Objectform");
+            var htmlstr = `
+            <h2>Object Form</h2> 
+            <div class="form-group">
+            <label for="${data.organizationIdentifier}">${data.organizationIdentifier}</label>
+            <input type="text" class="form-control" id="${data.organizationIdentifier}" name="${data.organizationIdentifier}" placeholder="Enter ${data.organizationIdentifier}">
+            </div>
+            `;
+            var attributes = data.attributesToBeVerifiedByOrganization;
+            for (let i = 1; i <= attributes.length; i++) {
+                var attribute = attributes[i - 1];
+                htmlstr += `<div class="form-group">
+        <label for="${attribute}"">${attribute}</label>
+        <input type="text" class="form-control" id="${attribute}" name="${attribute}"placeholder="Enter ${attribute}">
+    </div>`;
+            }
+            htmlstr += `<button type="submit" class="btn btn-primary">Submit</button>`;
+            container.innerHTML = htmlstr;
+
+            //Ruleform
+            container = document.getElementById("Ruleform");
+            htmlstr = `<h2> Rule Form </h2>`;
+            for (let i = 1; i <= data.namesofOrganizations.length; i++) {
+                var organization = data.namesofOrganizations[i - 1];
+                var attributesToBeVerifiedByOrganization = data.attributesToBeVerifiedByOrganizations[organization];
+                for (let j = 1; j <= attributesToBeVerifiedByOrganization.length; j++) {
+                    var attribute = attributesToBeVerifiedByOrganization[j - 1];
+                    htmlstr += `<div class="form-group">
+        <label for="${attribute}"">${attribute}</label>
+        <input type="text" class="form-control" id="${attribute}" name="${attribute}" placeholder="Enter ${attribute}">
+    </div>`;
+                }
+            }
+            htmlstr += `<button type="submit" class="btn btn-primary">Submit</button>`;
+            container.innerHTML = htmlstr;
+
+            //Accessform
+            container = document.getElementById("Accessform");
+            htmlstr = `<h2> Rule Form </h2>`;
+            for (let i = 1; i <= data.namesofOrganizations.length; i++) {
+                var organization = data.namesofOrganizations[i - 1];
+                var attribute = data.organizationsIdentifiers[organization];
+                htmlstr += `<div class="form-group">
+        <label for="${attribute}"">${attribute}</label>
+        <input type="text" class="form-control" id="${attribute}" name="${attribute}" placeholder="Enter ${attribute}">
+    </div>`;
+            }
+            htmlstr += `<button type="submit" class="btn btn-primary">Submit</button>`;
+            container.innerHTML = htmlstr;
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

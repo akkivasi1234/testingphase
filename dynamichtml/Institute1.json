@@ -1,0 +1,8 @@
+{
+    "organizationName": "Institute1",
+    "organizationIdentifier": "RollNo1",
+    "attributesToBeVerifiedByOrganization": [
+        "Designation1",
+        "Department1"
+    ]
+}
